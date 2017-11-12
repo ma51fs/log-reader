@@ -1,0 +1,37 @@
+Background
+----------
+
+Jmeter is a Java tool that is used to perform performance testing. A script is executed in Jmeter that defines a series of requests that should be sent to the server. 
+The response time of each request is logged and then a summary report is produced that defines the metrics (avergage, median ect) for each request.
+
+For example, if the following requests were made to the server:
+
+Request 1 : Home Page, took 200ms
+Request 2:  Home Page, took 400ms
+
+Then a "Summary" report would be produced containing a single line:
+
+Home Page, Count 2, Average 300ms
+
+
+Problem
+-------
+
+At Lombard Risk we have a suite of performance tests that take approximately 7 hours to run. On one particular day, the JMeter script was executed incorrectly such that rather than
+producing a "Summary" report, a detailed log file was produced. (See attached Full.log)
+
+We could execute the jmeter script again but as it takes 7 hours to run... OR
+
+What we would like you to do is write a Java program that will parse the "Full.log" extracting information:
+
+ - Label : The name of the test step that occured
+ - Latency : The time it took to perform the step
+ 
+With this raw data, create a summary row for each label that provides the following information:
+ - Label : As defined above
+ - Count : the number of times that request was executed
+ - Average : the average latency of the request
+ 
+The summary report we want to produce is defined in the attached Summary.log
+
+Please don't spend more than 2 hours on the solution.
